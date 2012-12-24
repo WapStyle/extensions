@@ -173,11 +173,10 @@ class Pun_bbcode {
 					if ($forum_user['pun_bbcode_use_buttons'] && $button['image']) {
 						$button_class .= ' image';
 						$title = $button['title'];
-						$button['title'] = '';
 					}
 
 					// Element ID attr can not content space — thats why we replace space in NAME with underscore
-					echo '<input type="button" title="'.$title.'" class="'.$button_class.'" data-tag="'.$button['tag'].'" id="pun_bbcode_button_'.str_replace(' ', '_', $button['name']).'" value="'.$button['title'].'" name="'.$button['name'].'" onclick="'.$onclick_handler.'" tabindex="'.$pun_bbcode_tabindex.'" />';
+					echo '<input type="button" title="'.$title.'" class="'.$button_class.'" data-tag="'.$button['tag'].'" id="pun_bbcode_button_'.str_replace(' ', '_', $button['name']).'" value="['.$button['title'].']" name="'.$button['name'].'" onclick="'.$onclick_handler.'" tabindex="'.$pun_bbcode_tabindex.'" />';
 
 					$pun_bbcode_tabindex++;
 					$current_group = $button['group'];
